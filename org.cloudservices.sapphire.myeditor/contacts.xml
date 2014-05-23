@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c:contacts xmlns:c="http://www.eclipse.org/sapphire/samples/contacts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.eclipse.org/sapphire/samples/address http://www.eclipse.org/sapphire/samples/address/1.0 http://www.eclipse.org/sapphire/samples/contacts http://www.eclipse.org/sapphire/samples/contacts/1.0" xmlns:a="http://www.eclipse.org/sapphire/samples/address">
+    <c:contact name="fotis">
+        <c:e-mail>asfda@gmail.com</c:e-mail>
+        <c:assistant></c:assistant>
+        <c:connections>fotis</c:connections>
+        <c:primary-occupation>
+            <c:student></c:student>
+        </c:primary-occupation>
+    </c:contact>
+</c:contacts>
