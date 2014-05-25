@@ -41,4 +41,27 @@ public interface WebSite extends Element
     Value<String> getUrl();
     void setUrl( String url );
     
+   // *** Key ***
+    
+    @XmlBinding( path = "key" )
+    @Label( standard = "KEY" )
+    @Required
+
+    ValueProperty PROP_KEY = new ValueProperty( TYPE, "Key" );
+
+    Value<String> getKey();
+    void setKey( String key );
+    
+    // *** Value ***
+    
+    @XmlBinding( path = "value" )
+    @Label( standard = "VALUE" )
+    @Required
+
+    ValueProperty PROP_VALUE = new ValueProperty( TYPE, "Value" );
+
+    Value<String> getValue();
+    void setValue( String value );
+    
 }
+

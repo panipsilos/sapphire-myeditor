@@ -85,13 +85,13 @@ public interface Contact extends Element
     
     // *** EMail ***
     
-    @Label( standard = "E-Mail" )
-    @XmlBinding( path = "e-mail" )
+    @Label( standard = "Base_Url" )
+    @XmlBinding( path = "baseUrl" )
 
-    ValueProperty PROP_E_MAIL = new ValueProperty( TYPE, "EMail" );
+    ValueProperty PROP_BASE_URL = new ValueProperty( TYPE, "baseUrl" );
 
-    Value<String> getEMail();
-    void setEMail( String email );
+    Value<String> getBaseUrl();
+    void setBaseUrl( String baseUrl );
     
     // *** PhoneNumbers ***
     
@@ -112,6 +112,16 @@ public interface Contact extends Element
     ListProperty PROP_WEB_SITES = new ListProperty( TYPE, "WebSites" );
     
     ElementList<WebSite> getWebSites();
+    
+    // *** Providers ***
+        
+    @Type( base = Provider.class )
+    @Label( standard = "providers" )
+    @XmlListBinding( path = "providers", mappings = @XmlListBinding.Mapping( element = "provider", type = Provider.class ) )
+                             
+    ListProperty PROP_PROVIDERS = new ListProperty( TYPE, "Providers" );
+    
+    ElementList<Provider> getProviders();
     
     // *** METHOD: removePhoneNumbersByAreaCode ***
     

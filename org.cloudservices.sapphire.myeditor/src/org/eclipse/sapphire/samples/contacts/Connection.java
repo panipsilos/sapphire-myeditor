@@ -20,6 +20,7 @@ import org.eclipse.sapphire.modeling.annotations.Label;
 import org.eclipse.sapphire.modeling.annotations.NoDuplicates;
 import org.eclipse.sapphire.modeling.annotations.PossibleValues;
 import org.eclipse.sapphire.modeling.annotations.Required;
+import org.eclipse.sapphire.modeling.xml.annotations.XmlBinding;
 
 /**
  * @author <a href="mailto:konstantin.komissarchik@oracle.com">Konstantin Komissarchik</a>
@@ -30,23 +31,28 @@ import org.eclipse.sapphire.modeling.annotations.Required;
 public interface Connection extends Element
 {
     ElementType TYPE = new ElementType( Connection.class );
-
-    // *** Name ***
     
-    @Label( standard = "name" )
+  // *** Key ***
+    
+    @XmlBinding( path = "key" )
+    @Label( standard = "KEY" )
     @Required
-    @NoDuplicates
+
+    ValueProperty PROP_KEY = new ValueProperty( TYPE, "Key" );
+
+    Value<String> getKey();
+    void setKey( String key );
     
-    @PossibleValues
-    ( 
-        property = "/Contacts/Name", 
-        caseSensitive = false, 
-        invalidValueMessage = "Could not find contact name \"{0}\" in the repository." 
-    )
+    // *** Value ***
+    
+    @XmlBinding( path = "value" )
+    @Label( standard = "VALUE" )
+    @Required
 
-    ValueProperty PROP_NAME = new ValueProperty( TYPE, "Name" );
+    ValueProperty PROP_VALUE = new ValueProperty( TYPE, "Value" );
 
-    Value<String> getName();
-    void setName( String name );
+    Value<String> getValue();
+    void setValue( String value );
+    
     
 }

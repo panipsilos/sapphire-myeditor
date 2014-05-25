@@ -69,7 +69,7 @@ public final class AttendeeResource extends Resource
                     attendee.isInContactRepository().refresh();
                     attendee.getEMail().refresh();
                 }
-                else if( property == Contact.PROP_E_MAIL )
+                else if( property == Contact.PROP_BASE_URL )
                 {
                     attendee.getEMail().refresh();
                 }
@@ -132,7 +132,7 @@ public final class AttendeeResource extends Resource
                 public String read()
                 {
                     final Contact c = findContactRecord( false );
-                    return ( c != null ? c.getEMail().text() : null );
+                    return ( c != null ? c.getBaseUrl().text() : null );
                 }
                 
                 @Override
@@ -142,7 +142,7 @@ public final class AttendeeResource extends Resource
                     
                     if( c != null )
                     {
-                        c.setEMail( value );
+                        c.setBaseUrl( value );
                     }
                 }
             };

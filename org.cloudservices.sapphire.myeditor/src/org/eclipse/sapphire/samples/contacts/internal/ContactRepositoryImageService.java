@@ -43,7 +43,7 @@ public final class ContactRepositoryImageService extends ImageService
             }
         };
         
-        context( Element.class ).attach( this.listener, "Contacts/EMail" );
+        context( Element.class ).attach( this.listener, "Contacts/baseUrl" );
     }
 
     @Override
@@ -53,7 +53,7 @@ public final class ContactRepositoryImageService extends ImageService
         
         for( Contact contact : context( ContactRepository.class ).getContacts() )
         {
-            if( contact.getEMail().content() != null )
+            if( contact.getBaseUrl().content() != null )
             {
                 foundContactWithEMail = true;
                 break;
@@ -68,7 +68,7 @@ public final class ContactRepositoryImageService extends ImageService
     {
         super.dispose();
         
-        context( Element.class ).detach( this.listener, "Contacts/EMail" );
+        context( Element.class ).detach( this.listener, "Contacts/baseUrl" );
     }
     
 }

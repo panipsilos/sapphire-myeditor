@@ -42,13 +42,13 @@ public final class ContactImageService extends ImageService
             }
         };
         
-        context( Element.class ).attach( this.listener, "EMail" );
+        context( Element.class ).attach( this.listener, "baseUrl" );
     }
 
     @Override
     protected ImageData compute()
     {
-        if( context( Contact.class ).getEMail().content() == null )
+        if( context( Contact.class ).getBaseUrl().content() == null )
         {
             return IMG_PERSON_FADED;
         }
@@ -63,7 +63,7 @@ public final class ContactImageService extends ImageService
     {
         super.dispose();
         
-        context( Element.class ).detach( this.listener, "EMail" );
+        context( Element.class ).detach( this.listener, "baseUrl" );
     }
     
 }

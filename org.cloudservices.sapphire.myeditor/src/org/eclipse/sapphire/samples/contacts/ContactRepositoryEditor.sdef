@@ -85,11 +85,11 @@
                             <content>
                                 <property-editor>Name</property-editor>
                                 <property-editor>Category</property-editor>
-                                <property-editor>EMail</property-editor>
+                                <property-editor>baseUrl</property-editor>
                             </content>
                         </section>
                         <section>
-                            <label>address</label>
+                            <label>User specific info</label>
                             <documentation>
                                 <title>Address</title>
                                 <content>This would be the help content for the address section.</content>
@@ -132,8 +132,34 @@
                             </content>
                         </section>
                         <node>
-                            <label>web sites</label>
+                            <label>SubmitSignInRequest</label>
                             <image>Web.png</image>
+                            <section>
+                                <label>Provider Specific Data</label>
+                                <description>Info that are specific to the provider of the service and can be defined at design time should be described here</description>
+                                <content>
+                                    <property-editor>
+                                        <show-label>false</show-label>
+                                        <property>Connections</property>
+                                        <span>true</span>
+                                        <height>100</height>
+                                    </property-editor>
+                                </content>
+                            </section>
+                            <section>
+                                <label>User Specific Data</label>
+                                <description>Info that are specific to the user of the service and can be defined at design time should be described here</description>
+                                <content>
+                                    <property-editor>
+                                        <span>true</span>
+                                        <property>Providers</property>
+                                        <height>100</height>
+                                        <show-label>false</show-label>
+                                        <child-property>Key</child-property>
+                                        <child-property>Value</child-property>
+                                    </property-editor>
+                                </content>
+                            </section>
                             <section>
                                 <content>
                                     <property-editor>
@@ -147,9 +173,15 @@
                                         </child-property>
                                         <show-label>false</show-label>
                                         <span>true</span>
+                                        <child-property>Value</child-property>
+                                        <child-property>Key</child-property>
+                                        <height>100</height>
                                     </property-editor>
                                 </content>
+                                <label>Dynamic Data</label>
+                                <description>Data that are known at run-time shoule be described here. If there is a correspondence with the abstract defined API then it should be described as follows: key: abstract API, value: provider API. If there is no equivalent field in the abstract API then to be decided how to handle this.</description>
                             </section>
+                            <documentation></documentation>
                         </node>
                         <node>
                             <label>assistant</label>
@@ -183,15 +215,6 @@
                         </node>
                         <node>
                             <label>connections</label>
-                            <section>
-                                <content>
-                                    <property-editor>
-                                        <property>Connections</property>
-                                        <show-label>false</show-label>
-                                        <span>true</span>
-                                    </property-editor>
-                                </content>
-                            </section>
                         </node>
                         <node>
                             <label>primary occupation</label>
